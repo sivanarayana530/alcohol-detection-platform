@@ -20,7 +20,7 @@ const AwarenessApp = () => {
 
   const fetchBlogs = async () => {
     try {
-      const res = await fetch("https://backend-1-h7od.onrender.com/api/news");
+      const res = await fetch("https://alcohol-detection-platform.onrender.com");
       const data = await res.json();
 
       if (!data.articles || !Array.isArray(data.articles)) {
