@@ -20,7 +20,7 @@ const AwarenessApp = () => {
 
   const fetchBlogs = async () => {
     try {
-      const res = await fetch("https://alcohol-detection-platform.onrender.com");
+      const res = await fetch("https://alcohol-detection-platform.onrender.com/api/news");
       const data = await res.json();
 
       if (!data.articles || !Array.isArray(data.articles)) {
@@ -50,9 +50,14 @@ const AwarenessApp = () => {
             title={`Awareness Video ${index}`}
             allowFullScreen
           ></iframe>
-          <img src={blog.urlToImage} alt="Thumbnail" />
-          <h3>{blog.title}</h3>
-          <p>{blog.description}</p>
+
+          <img
+            src={blog.urlToImage || "https://via.placeholder.com/600x300?text=No+Image"}
+            alt="Thumbnail"
+          />
+
+          <h3>{blog.title || "Untitled"}</h3>
+          <p>{blog.description || "No description available."}</p>
           <a href={blog.url} target="_blank" rel="noreferrer">
             Read more
           </a>
