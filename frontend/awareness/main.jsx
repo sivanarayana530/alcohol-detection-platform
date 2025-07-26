@@ -1,9 +1,6 @@
-
 import React, { useEffect, useState } from "react";
 import ReactDOM from "react-dom/client";
 import "./style.css";
-
-const API_KEY = "195061421e85426c9c02a18723c41c9a"; // Replace this
 
 const videos = [
   "https://www.youtube.com/embed/_DRz3TNJU2A",
@@ -23,10 +20,14 @@ const AwarenessApp = () => {
 
   const fetchBlogs = async () => {
     try {
-      const res = await fetch(
-        `https://newsapi.org/v2/everything?q=drunk%20driving&language=en&pageSize=10&sortBy=publishedAt&apiKey=${API_KEY}`
-      );
+      const res = await fetch("https://backend-1-h7od.onrender.com/api/news");
       const data = await res.json();
+
+      if (!data.articles || !Array.isArray(data.articles)) {
+        console.error("Invalid NewsAPI response:", data);
+        return;
+      }
+
       setBlogs(data.articles.slice(0, 10));
     } catch (err) {
       console.error("Error fetching articles:", err);
@@ -35,7 +36,7 @@ const AwarenessApp = () => {
 
   useEffect(() => {
     fetchBlogs();
-    const interval = setInterval(fetchBlogs, 12 * 60 * 1000); // every 12 minutes
+    const interval = setInterval(fetchBlogs, 12 * 60 * 1000); // every 12 min
     return () => clearInterval(interval);
   }, []);
 
