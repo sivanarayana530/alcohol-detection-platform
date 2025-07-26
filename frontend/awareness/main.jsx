@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import ReactDOM from "react-dom/client";
 import "./style.css";
 
-const API_KEY = "YOUR_NEWSAPI_KEY"; // Replace this
+const API_KEY = "195061421e85426c9c02a18723c41c9a"; // Replace this
 
 const videos = [
   "https://www.youtube.com/embed/_DRz3TNJU2A",
