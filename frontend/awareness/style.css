@@ -1,45 +1,58 @@
-
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Segoe UI', sans-serif;
-  background: url('https://images.unsplash.com/photo-1611928489511-9db8ed7228f9') no-repeat center center fixed;
+  font-family: "Arial", sans-serif;
+  background: url("https://i.ibb.co/G2jCMqj/blood.jpg") no-repeat center center fixed;
   background-size: cover;
-  color: #f5f5f5;
+  color: white;
 }
 
 .container {
   padding: 2rem;
-  background-color: rgba(0, 0, 0, 0.7);
-  min-height: 100vh;
-}
-
-h1 {
-  text-align: center;
-  margin-bottom: 1rem;
-  color: crimson;
+  backdrop-filter: blur(6px);
+  background-color: rgba(0, 0, 0, 0.6);
+  border-radius: 12px;
+  max-width: 1000px;
+  margin: auto;
 }
 
 .card {
-  background-color: #1a1a1a;
-  border: 1px solid crimson;
-  margin-bottom: 2rem;
+  background: rgba(255, 255, 255, 0.1);
+  margin: 1rem 0;
   padding: 1rem;
   border-radius: 10px;
+  transition: transform 0.3s ease;
 }
 
-.card img {
-  max-width: 100%;
-  border-radius: 8px;
-}
-
-.card h3 {
-  color: crimson;
+.card:hover {
+  transform: scale(1.02);
+  background: rgba(255, 255, 255, 0.2);
 }
 
 .card iframe {
   width: 100%;
-  height: 200px;
+  height: 280px;
+  margin-bottom: 1rem;
+  border: none;
+}
+
+.card img {
+  width: 100%;
+  border-radius: 8px;
   margin-bottom: 0.5rem;
-  border-radius: 6px;
+}
+
+.card h3 {
+  margin-top: 0;
+  font-size: 1.2rem;
+}
+
+.card p {
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+.card a {
+  color: #ffdcdc;
+  text-decoration: underline;
 }
